@@ -1,0 +1,23 @@
+<form>
+    <div class="form-group">
+        <label for="tituloInput">Título</label>
+        <input type="text" class="form-control" id="tituloInput" aria-describedby="tituloHelp">
+        <small id="tituloHelp" class="form-text text-muted">Escreva aqui a pergunta para a criação do
+            questionário.</small>
+    </div>
+    <div class="form-group">
+        <label for="usuarioSelect">Usuários</label>
+        <select class="form-control" id="usuarioSelect" aria-describedby="usuarioHelp">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+        <small id="usuarioHelp" class="form-text text-muted">Escolha o usuário dono do novo questionário.</small>
+    </div>
+    <div class="alert alert-warning" role="alert">
+        A data de criação do questionário será gerada automaticamente pelo servidor no momento do registro.
+    </div>
+    <button type="submit" class="btn btn-primary d-block mx-auto">Registar questionário</button>
+</form>

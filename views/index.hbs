@@ -1,0 +1,31 @@
+<a href="/questionario"><button class="mx-auto btn btn-success m-2">Adicionar novo questionário</button></a>
+<ul class="list-group">
+    <li class="list-group-item list-group-item-action">        
+        Cras justo odio <span class="badge badge-primary badge-pill">14</span>
+        <p class='m-0'><small><i>por Usuário às 00:00:00 00:00</i></small></p>
+        <ul class="list-group" style="display:none;">
+            <button class="mx-auto m-2 btn btn-primary">Responder</button>            
+            <li class="list-group-item list-group-item-action">Cras justo odio<p class='m-0'><small><i>por Usuário às 00:00:00 00:00</i></small></p></li>
+            <li class="list-group-item list-group-item-action">Dapibus ac facilisis in</li>
+            <li class="list-group-item list-group-item-action">Morbi leo risus</li>
+            <li class="list-group-item list-group-item-action">Porta ac consectetur ac</li>
+            <li class="list-group-item list-group-item-action">Vestibulum at eros</li>
+        </ul>
+    </li>
+    <li class="list-group-item list-group-item-action">Dapibus ac facilisis in <span
+            class="badge badge-primary badge-pill">3</span></li>
+    <li class="list-group-item list-group-item-action">Morbi leo risus <span
+            class="badge badge-primary badge-pill">4</span></li>
+    <li class="list-group-item list-group-item-action">Porta ac consectetur ac <span
+            class="badge badge-primary badge-pill">144</span></li>
+    <li class="list-group-item list-group-item-action">Vestibulum at eros <span
+            class="badge badge-primary badge-pill">214</span></li>
+</ul>
+
+<script>
+    $(document).ready(function () {
+        $("li.list-group-item.list-group-item-action").on("click", function () {
+            $(this).find("ul").slideToggle();
+        });
+    });
+</script>
