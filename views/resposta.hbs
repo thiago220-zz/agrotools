@@ -1,22 +1,31 @@
-<form>
+<form action="../../api/salvar-resposta" method="POST">
     <div class="form-group">
         <label for="tituloInput">Resposta</label>
-        <input type="text" class="form-control" id="tituloInput" aria-describedby="tituloHelp">
+        <input type="text" class="form-control" name="resposta" id="tituloInput" aria-describedby="tituloHelp">
         <small id="tituloHelp" class="form-text text-muted">Escreva aqui a resposta.</small>
     </div>
     <div class="form-group">
+        <label for="latInput">Latitude</label>
+        <input type="number" step=".000000001" name="long" max="90" min="-90" class="form-control" id="latInput" aria-describedby="latHelp">
+        <small id="latHelp" class="form-text text-muted">Escreva aqui as coordenadas da latitude, com até 9 casas de precisão.</small>
+    </div>
+    <div class="form-group">
+        <label for="LongInput">Longitude</label>
+        <input type="number" name="lat" step=".000000001" max="90" min="-90" class="form-control" id="LongInput" aria-describedby="LongHelp">
+        <small id="LongHelp" class="form-text text-muted">Escreva aqui as coordenadas da longitude, com até 9 casas de precisão.</small>
+    </div>
+    <div class="form-group">
         <label for="usuarioSelect">Usuário</label>
-        <select class="form-control" id="usuarioSelect" aria-describedby="usuarioHelp">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+        <select class="form-control" id="usuarioSelect" name="usuarioId" aria-describedby="usuarioHelp">
+            {{#each usuarios}}
+                <option value="{{id}}">{{nome}}</option>
+            {{/each}}
         </select>
         <small id="usuarioHelp" class="form-text text-muted">Escolha o usuário que responde esse questionário.</small>
     </div>
     <div class="alert alert-warning" role="alert">
         A data da resposta será gerada automaticamente pelo servidor no momento do registro.
     </div>
+    <input type="hidden" name="questionarioId" value="{{id}}">
     <button type="submit" class="btn btn-primary d-block mx-auto">Registar resposta</button>
 </form>

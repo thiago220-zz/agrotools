@@ -1,17 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
-router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Todos os quetionários' });
-});
+var frontend_controller = require('../controllers/frontendController');
 
-router.get('/questionario', function (req, res, next) {
-  res.render('questionario', { title: 'Adicionar um questionário' });
-});
+router.get('/', frontend_controller.index);
 
-router.get('/resposta/:id', function (req, res, next) {
-  res.render('resposta', { title: 'Responder o questionário nº ' + req.params.id });
-});
+router.get('/questionario', frontend_controller.questionario);
+
+router.get('/resposta/:id', frontend_controller.resposta);
 
 module.exports = router;
